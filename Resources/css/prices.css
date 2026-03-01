@@ -1,0 +1,197 @@
+:root {
+  --brand-red: #940012;
+  --charcoal: #333;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+.book-container {
+  perspective: 1500px; /* Gives the 3D depth */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.book {
+  width: 350px; /* Matches your card width */
+  height: 600px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform-origin: left; /* Flips from the spine */
+  transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+  backface-visibility: hidden;
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 0 10px 10px 0; /* Rounded edges like a book */
+}
+
+/* The flipped state */
+.page.flipped {
+  transform: rotateY(-180deg);
+}
+
+/* The "Page" Container */
+.menu-page {
+  width: 100%;
+  max-width: 450px;
+  min-height: 800px;
+  margin: 0 auto 40px auto;
+  background-color: white;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Specific Card Backgrounds */
+.page-cover {
+  background-image: url("../img/Happy Puppy BC.png");
+}
+.page-sitting {
+  background-image: url("../img/Happy Puppy BC2.png");
+}
+.page-logistics {
+  background-image: url("../img/Happy Puppy BC3.png");
+}
+
+/* Content Placement */
+.content-area {
+  padding: 40px 25px;
+  flex-grow: 1;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.85
+  ); /* Keeps text readable over card patterns */
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 60px;
+}
+
+h1 {
+  font-family: "Merriweather", serif;
+  color: var(--brand-red);
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+/* Service Styling */
+.category-block {
+  margin-bottom: 25px;
+  border-left: 3px solid var(--brand-red);
+  padding-left: 12px;
+}
+
+.category-title {
+  color: var(--brand-red);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px dashed #ddd;
+  font-size: 0.9rem;
+}
+
+.unit {
+  font-size: 0.7rem;
+  color: #888;
+}
+
+/* Buttons Anchored on the Yellow Wave */
+.wave-actions {
+  position: absolute;
+  bottom: 50px; /* Positions exactly over the yellow area */
+  width: 100%;
+  text-align: center;
+}
+
+.holiday-btn {
+  background: var(--brand-red);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.main-app-btn {
+  background: var(--brand-red);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+/* Modal / Popup Styles */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  width: 80%;
+  max-width: 400px;
+  padding: 25px;
+  border-radius: 10px;
+  border-left: 8px solid var(--brand-red);
+  text-align: center;
+}
+
+.modal-close-action {
+  margin-top: 15px;
+  background: #eee;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+

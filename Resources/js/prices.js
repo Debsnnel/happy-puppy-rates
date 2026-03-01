@@ -439,7 +439,7 @@ window.openInfoModal = (type) => {
       <div style="text-align: left; background: #f9f9f9; padding: 12px; border-radius: 8px; margin: 10px 0; border-left: 4px solid var(--brand-red); display: flex; align-items: flex-start;">
         
         <div style="min-width: 50px; margin-right: 15px; padding-top: 5px;">
-          <img src="Resources/img/icon/Meet%20&%20greet.svg" alt="Meet & Greet" style="width: 45px; height: auto; display: block;">
+          <img src="Resources/img/icon/Meet%20&%20Greet.svg" alt="Meet & Greet" style="width: 45px; height: auto; display: block;">
         </div>
         
         <p style="margin: 0; line-height: 1.8;">

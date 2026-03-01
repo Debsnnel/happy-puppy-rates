@@ -195,3 +195,7 @@ h1 {
   font-weight: bold;
 }
 
+/* Hiding the app button until the app is ready */
+.main-app-btn {
+  display: none !important;
+}

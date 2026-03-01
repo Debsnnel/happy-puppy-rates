@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Menu | Happy Puppy</title>
+    <link
+      rel="icon"
+      href="Resources/img/happypuppyicon.svg"
+      type="image/svg+xml"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" href="Resources/css/prices.css" />
+  </head>
+  <body>
+    <div class="menu-page page-cover"></div>
+
+    <div class="menu-page page-sitting">
+      <div class="content-area">
+        <header>
+          <img
+            src="Resources/img/Happy Puppy Paw  angle (500 x 500 px).png"
+            class="logo"
+          />
+          <div>
+            <h1>Happy Puppy</h1>
+            <small>SERVICE MENU & RATES</small>
+          </div>
+        </header>
+
+        <div class="category-block">
+          <div id="in-house-list"></div>
+        </div>
+
+        <div class="category-block">
+          <div id="hosting-list"></div>
+        </div>
+      </div>
+
+      <div class="wave-actions">
+        <button class="holiday-btn" onclick="openPolicy()">
+          Public Holiday Policy ℹ️
+        </button>
+      </div>
+    </div>
+
+    <div class="menu-page page-logistics">
+      <div class="content-area">
+        <div class="category-block">
+          <div id="walking-list"></div>
+        </div>
+
+        <div class="category-block">
+          <div id="taxi-list"></div>
+        </div>
+      </div>
+
+      <div class="wave-actions">
+        <a href="index.html" class="main-app-btn">ENTER WEB APP</a>
+
+        <p
+          style="
+            font-size: 0.7rem;
+            margin-top: 15px;
+            color: #444;
+            font-weight: bold;
+          "
+        >
+          &copy; 2026 Deborah Nikita Nel
+        </p>
+
+        <div style="margin-top: 25px">
+          <p
+            style="
+              font-size: 0.65rem;
+              color: #666;
+              margin-bottom: 5px;
+              font-weight: normal;
+            "
+          >
+            Designed & Developed by:
+          </p>
+          <img
+            src="Resources/img/EdenBusiness1.png"
+            alt="Eden Business Logo"
+            style="width: 100px; height: auto; display: block; margin: 0 auto"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div id="policyModal" class="modal-overlay">
+      <div class="modal-content">
+        <h2
+          class="modal-title"
+          style="
+            color: var(--brand-red);
+            font-family: &quot;Merriweather&quot;, serif;
+          "
+        >
+          Holiday Policy
+        </h2>
+        <div class="modal-text">
+          <p>
+            To ensure our sitters are fairly compensated, work on Public
+            Holidays is charged at double the rate per SA labor guidelines.
+          </p>
+        </div>
+        <button class="modal-close-action" onclick="closePolicy()">
+          Got it!
+        </button>
+      </div>
+    </div>
+
+    <script type="module" src="Resources/js/prices.js"></script>
+
+    <script>
+      function openPolicy() {
+        const modal = document.getElementById("policyModal");
+        modal.querySelector(".modal-title").innerText = "Holiday Policy";
+        modal.querySelector(".modal-text").innerHTML =
+          "<p>To ensure our sitters are fairly compensated, work on Public Holidays is charged at double the rate per SA labor guidelines.</p>";
+        modal.style.display = "flex";
+      }
+
+      function closePolicy() {
+        document.getElementById("policyModal").style.display = "none";
+      }
+
+      window.onclick = function (event) {
+        const modal = document.getElementById("policyModal");
+        if (event.target == modal) {
+          closePolicy();
+        }
+      };
+    </script>
+  </body>
+</html>
